@@ -1,0 +1,11 @@
+
+resolver: lts-14.11
+
+packages:
+- .
+
+extra-deps:
+# antlr-haskell
+- git: https://github.com/marinelli/antlr-haskell.git
+  commit: 1d8ae1f24345c19a4edb6a0b4f9e91a627a2d8d3
+

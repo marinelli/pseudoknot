@@ -1,0 +1,62 @@
+
+name:                   pseudoknot
+version:                0.1.0.0
+github:                 "marinelli/pseudoknot"
+license:                BSD3
+author:                 "Giorgio Marinelli"
+maintainer:             "giorgio@marinel.li"
+copyright:              "© 2019 Giorgio Marinelli"
+
+extra-source-files:
+- README.md
+
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:            Please see the README on GitHub at <https://github.com/marinelli/pseudoknot#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- antlr-haskell
+- containers
+- pretty-simple
+
+default-extensions:
+- BangPatterns
+- DataKinds
+- DeriveAnyClass
+- DeriveDataTypeable
+- DeriveGeneric
+- DeriveLift
+- FlexibleContexts
+- GeneralizedNewtypeDeriving
+- OverloadedStrings
+- QuasiQuotes
+- TemplateHaskell
+- TypeFamilies
+
+library:
+  source-dirs: src
+
+executables:
+  pseudoknot-exe:
+    main:               Main.hs
+    source-dirs:        app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - pseudoknot
+
+  pseudoknot-strand:
+    main:               Main.hs
+    source-dirs:        strand
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - pseudoknot
+
