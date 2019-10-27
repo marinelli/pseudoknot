@@ -1,6 +1,7 @@
 
 module Strand.Run where
 
+import Data.Char (toUpper)
 import Language.ANTLR4
 import Pseudoknot.Run (parseAndValidate)
 import Pseudoknot.Semantic (DotBracketNotation(..))
@@ -18,7 +19,8 @@ strandRun = do
       let
         (seqs, dpseq)  = ast2dotparformat ast
         (_, dpIndexed) = getIndexedDotPar 1 dpseq
-        sequence       = printSequence seqs
+        sequence       = map (\ c -> if toUpper c == 'C' then 'U' else c) $
+          printSequence seqs
         declarations   = printDeclarations dpIndexed
         structure      = printStructure $ repeatFilterDotPar dpIndexed
         result         = concat $
