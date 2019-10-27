@@ -1,3 +1,4 @@
 .stack-work/
 pseudoknot.cabal
 *~
+stack*.yaml.lock

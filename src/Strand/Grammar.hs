@@ -1,12 +1,12 @@
 
 module Strand.Grammar where
 
+import Data.List (intersperse)
 import Language.ANTLR4
 import Language.ANTLR4 (Data(..))
+import Pseudoknot.Grammar (Sequence(..), getSequence)
 import Text.ANTLR.Pretty
 import Text.ANTLR.Set (Hashable(..), Generic(..))
-import Data.List (intersperse)
-import Pseudoknot.Grammar (Sequence(..), getSequence)
 
 
 data DotPar
@@ -15,7 +15,6 @@ data DotPar
   | DPPar DotPar
   | DPConc DotPar DotPar
   deriving (Eq, Show)
-
 
 data LabeledDotPar t
   = LDPEmpty
@@ -38,7 +37,6 @@ getIndexedDotPar index dp = case dp of
         ((_ , j''), ldp2) = getIndexedDotPar j'    dp2
     in
       ((i', j''), LDPConc ldp1 ldp2)
-
 
 printSequence :: [Sequence] -> String
 printSequence = concat . map getSequence
@@ -78,8 +76,6 @@ printStructure' ldp = case ldp of
   LDPPar (x, y) LDPEmpty -> ["h" <> show x]
   LDPPar (x, y) ldp' -> printStructure' ldp' ++ [" | " <> "h" <> show x]
   LDPConc ldp1 ldp2  -> ["("] ++ printStructure' ldp1 ++ [" + "] ++ printStructure' ldp2 ++ [")"]
-
-
 
 
 [g4|

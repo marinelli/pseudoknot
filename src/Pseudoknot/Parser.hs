@@ -5,8 +5,8 @@ module Pseudoknot.Parser
   )
   where
 
-import Pseudoknot.Grammar
 import Language.ANTLR4
+import Pseudoknot.Grammar
 import Text.ANTLR.LR (GLRResult)
 
 

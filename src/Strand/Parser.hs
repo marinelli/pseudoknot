@@ -5,10 +5,10 @@ module Strand.Parser
   )
   where
 
-import Strand.Grammar
 import Language.ANTLR4
-import Text.ANTLR.LR (GLRResult)
 import Pseudoknot.Grammar (Sequence(..))
+import Strand.Grammar
+import Text.ANTLR.LR (GLRResult)
 
 
 $(g4_parsers dotParAST dotParGrammar)

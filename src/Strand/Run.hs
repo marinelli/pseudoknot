@@ -1,12 +1,12 @@
 
 module Strand.Run where
 
-import Text.Pretty.Simple (pPrint)
 import Language.ANTLR4
-import Strand.Parser
-import Strand.Grammar
-import Pseudoknot.Semantic (DotBracketNotation(..))
 import Pseudoknot.Run (parseAndValidate)
+import Pseudoknot.Semantic (DotBracketNotation(..))
+import Strand.Grammar
+import Strand.Parser
+import Text.Pretty.Simple (pPrint)
 
 
 strandRun :: IO ()

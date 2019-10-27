@@ -3,12 +3,11 @@ module Pseudoknot.Run where
 
 import Control.Monad
 import Language.ANTLR4
-import Text.ANTLR.Set as S (toList)
-import Text.Pretty.Simple (pPrint)
-
 import Pseudoknot.Grammar
 import Pseudoknot.Parser
 import Pseudoknot.Semantic
+import Text.ANTLR.Set as S (toList)
+import Text.Pretty.Simple (pPrint)
 
 
 getAST (ResultAccept ast) = ast

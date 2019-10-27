@@ -3,7 +3,6 @@ module Pseudoknot.Grammar where
 
 import Language.ANTLR4
 import Language.ANTLR4 (Data(..))
-import Text.ANTLR.Pretty
 import Text.ANTLR.Set (Hashable(..), Generic(..))
 
 
