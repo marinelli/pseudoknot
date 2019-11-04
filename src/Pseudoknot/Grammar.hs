@@ -96,9 +96,9 @@ consList = (:)
     end
     ;
 
-  primary             : PrimaryKeyword                  -> ${const Primary } ;
+  primary             : PrimaryKeyword                  -> ${const Primary} ;
   primarySequence     : ID                              -> Sequence ;
-  declare             : DeclareKeyword                  -> ${const Declare } ;
+  declare             : DeclareKeyword                  -> ${const Declare} ;
   var                 : ID                              -> Var ;
   num                 : NUMBER                          -> Number ;
   declaration         : var '=' '(' num ',' num ')'     -> Declaration ;
@@ -106,7 +106,7 @@ consList = (:)
                       | declaration ',' declarations    -> consList ;
   declarationsOrEmpty : declarations                    -> id
                       |                                 -> emptyList ;
-  structure           : StructureKeyword                -> ${const Structure } ;
+  structure           : StructureKeyword                -> ${const Structure} ;
   structExpOrEmpty    : structExp                       -> id
                       |                                 -> ExpEmpty ;
   structExp           : structExpConc                   -> id ;
@@ -116,7 +116,7 @@ consList = (:)
                       | structExpNest '|' structExpId   -> ExpNest ;
   structExpSub        : structExpId                     -> id
                       | '(' structExp ')'               -> id ;
-  structExpId         : var                             -> ${ExpId . getVar } ;
+  structExpId         : var                             -> ${ExpId . getVar} ;
   end                 : EndKeyword                      -> ${const End} ;
 
 |]

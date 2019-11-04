@@ -71,11 +71,11 @@ printStructure = concat . printStructure'
 
 printStructure' :: LabeledDotPar (Int, Int) -> [String]
 printStructure' ldp = case ldp of
-  LDPEmpty           -> []
-  LDPDot _           -> []
+  LDPEmpty               -> []
+  LDPDot _               -> []
   LDPPar (x, y) LDPEmpty -> ["h" <> show x]
-  LDPPar (x, y) ldp' -> printStructure' ldp' ++ [" | " <> "h" <> show x]
-  LDPConc ldp1 ldp2  -> ["("] ++ printStructure' ldp1 ++ [" + "] ++ printStructure' ldp2 ++ [")"]
+  LDPPar (x, y) ldp'     -> printStructure' ldp' ++ [" | " <> "h" <> show x]
+  LDPConc ldp1 ldp2      -> ["("] ++ printStructure' ldp1 ++ [" + "] ++ printStructure' ldp2 ++ [")"]
 
 
 [g4|
