@@ -1,5 +1,5 @@
 
-resolver: lts-14.20
+resolver: lts-15.1
 
 packages:
 - .
@@ -7,5 +7,5 @@ packages:
 extra-deps:
 # antlr-haskell
 - git: https://github.com/marinelli/antlr-haskell.git
-  commit: 96d27906ac3ea9bc0559fdda7b4f595e241fbbde
+  commit: b661b4cb59ad7e8485a34fd8010122ca9303fdd1
 
